@@ -19,7 +19,7 @@ public class CommonIntercetpor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         LogUtil.autoFlush.set(false);
-        logger.info(BaseController.getClientIP(request)+" "+request.getServletPath()+JSON.toJSONString(request.getParameterMap()));
+        logger.info(request.getServletPath()+JSON.toJSONString(request.getParameterMap()));
         return true;
     }
 
